@@ -45,6 +45,17 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
         Route::delete('/users/delete/multiple','UserController@deleteMultiple');
 
 
+        Route::apiResource('tags', 'TagController');
+        Route::delete('/tags/delete/multiple','TagController@deleteMultiple'); 
+        
+        Route::get('documents/search', 'DocumentController@search');
+        Route::apiResource('documents', 'DocumentController');
+      Route::get('documents-list', 'DocumentController@listForDropdown');
+
+        Route::delete('/tags/delete/multiple','TagController@deleteMultiple');
+Route::post('documents/upload-image', 'DocumentController@uploadImage');
+
+
        
   
 });

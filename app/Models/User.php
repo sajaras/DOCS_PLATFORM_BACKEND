@@ -6,10 +6,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use OwenIt\Auditing\Contracts\Auditable;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements Auditable
 {
-    use HasApiTokens, Notifiable;
+    use HasApiTokens, Notifiable,HasRoles;
     use \OwenIt\Auditing\Auditable;
 
     /**
@@ -61,4 +62,11 @@ class User extends Authenticatable implements Auditable
     {
         return $this->hasMany(Document::class, 'author_id');
     }
+
+      public function getRoleIdsAttribute()
+    {
+        // Eager load permissions to avoid N+1 query problem
+        return $this->roles->pluck('id');
+    }
+
 }

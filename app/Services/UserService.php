@@ -165,12 +165,12 @@ class UserService
         $authUser = Auth::user();
 
         // Logic to determine the organization_id
-        if ($authUser && $authUser->is_ris_admin && $requestData->has('organization_id')) {
+        if ($authUser && $authUser->is_platform_admin && $requestData->has('organization_id')) {
             // If the user is an admin, they MUST provide the organization_id in the request
             $data['organization_id'] = $requestData->input('organization_id');
-        } elseif ($authUser && $authUser->currentOrganization) {
+        } elseif ($authUser && $authUser->organization) {
             // For a regular user, we get the organization_id from their authenticated context
-            $data['organization_id'] = $authUser->currentOrganization->id;
+            $data['organization_id'] = $authUser->organization->id;
         } else {
             // If we can't determine an organization, we can't proceed.
             throw new HttpException(403, 'Cannot determine the organization for this action.');

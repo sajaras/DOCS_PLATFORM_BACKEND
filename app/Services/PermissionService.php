@@ -138,8 +138,5 @@ class PermissionService
         }
     }
 
-    public function getPermissionGroups($request)
-    {
-        return PermissionGroup::with('permissions')->where('organization_id',$this->getOrganizationId($request))->get();
-    }
+   
 }

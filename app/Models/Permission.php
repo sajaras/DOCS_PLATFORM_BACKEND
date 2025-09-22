@@ -18,15 +18,15 @@ class Permission extends SpatiePermission
     {
         // This global scope will automatically filter roles by the current user's organization.
         static::addGlobalScope('organization', function (Builder $builder) {
-            if (auth()->check() && auth()->user()->organizations->count()) {
-                $builder->where('organization_id', auth()->user()->currentOrganization->id);
+            if (auth()->check() && auth()->user()->organization->count()) {
+                $builder->where('organization_id', auth()->user()->organization->id);
             }
         });
 
         // This will automatically set the organization_id when a new role is created.
         static::creating(function ($role) {
-            if (auth()->check() && auth()->user()->organizations->count()) {
-                $role->organization_id = auth()->user()->currentOrganization->id;
+            if (auth()->check() && auth()->user()->organization->count()) {
+                $role->organization_id = auth()->user()->organization->id;
             }
         });
     }

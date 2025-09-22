@@ -68,8 +68,9 @@ class Document extends Model implements Auditable
     /**
      * The tags that belong to the document.
      */
-    public function tags()
+       public function tags()
     {
-        return $this->belongsToMany(Tag::class, 'document_tag');
+       
+        return $this->belongsToMany(Tag::class, 'document_tags');
     }
 }
