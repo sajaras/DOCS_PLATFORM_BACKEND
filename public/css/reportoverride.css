@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'Roboto'; /* This is the name you'll use to apply the font */
+    src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Roboto'; /* This is the name you'll use to apply the font */
+    src: url('../fonts/Roboto-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Roboto'; /* This is the name you'll use to apply the font */
+    src: url('../fonts/Roboto-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  *
+  {
+    font-family: 'Roboto' !important;
+    font-weight: normal;
+  }
+
+
+  .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.row > div[class^="col-"] {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.endofreportbox
+  {
+    padding:4px;
+background-color: grey;
+color:white;
+  font-weight: 400;
+  font-size: 12px;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .table > thead > tr > th, .table > tbody > tr > td
+  {
+    border: 1px solid #333333 !important;
+    font-size:13px;
+  }
+  .table > thead > tr > th
+  {
+      background-color: #122e67 !important;
+      color:white !important;
+      font-size:13px;
+
+  }
+
+.organization-block
+{
+    text-align:center;
+     height: 200px;
+    border: 1px solid #ccc;
+}
+  .organization-logo
+  {
+    max-height: 100px;
+    width: auto;
+    margin:10px;
+    text-align: center;
+  }

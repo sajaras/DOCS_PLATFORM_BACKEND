@@ -1,0 +1,427 @@
+/* pt-sans-regular - latin */
+@font-face {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/pt-sansfonts/pt-sans-v11-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/pt-sansfonts/pt-sans-v11-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/pt-sansfonts/pt-sans-v11-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/pt-sansfonts/pt-sans-v11-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fontspt-sansfonts//pt-sans-v11-latin-regular.svg#PTSans') format('svg'); /* Legacy iOS */
+  }
+
+
+
+  
+  
+  
+  @font-face {
+    font-family:'reportfont';
+    font-weight:normal;
+    font-style: normal;
+    src: url('../fonts/ttf/happy-times-at-the-ikob.ttf') format('ttf');
+  
+  }
+
+  @font-face {
+    font-family: 'Roboto'; /* This is the name you'll use to apply the font */
+    src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Roboto'; /* This is the name you'll use to apply the font */
+    src: url('../fonts/Roboto-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Roboto'; /* This is the name you'll use to apply the font */
+    src: url('../fonts/Roboto-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  li >a
+  {
+    pointer:cursor;
+  }
+  
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: normal;
+    src: url(http://themes.googleusercontent.com/static/fonts/opensans/v8/cJZKeOuBrn4kERxqtaUH3aCWcynf_cDxXwCLxiixG1c.ttf) format('truetype');
+  }
+  
+  
+  
+  
+  
+  .table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+     border-collapse: collapse;
+  }
+  .table > thead > tr > th,
+  .table > tbody > tr > th,
+  .table > tfoot > tr > th,
+  .table > thead > tr > td,
+  .table > tbody > tr > td,
+  .table > tfoot > tr > td {
+    font-size:10px;
+    padding: 1px;
+  
+  
+    vertical-align: top;
+  font-family: 'Roboto';
+  font-weight: normal;
+  }
+  
+  
+  .table12px {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+     border-collapse: collapse;
+  
+  
+  }
+  .table12px > thead > tr > th,
+  .table12px > tbody > tr > th,
+  .table12px > tfoot > tr > th,
+  .table12px > thead > tr > td,
+  .table12px > tbody > tr > td,
+  .table12px > tfoot > tr > td {
+    font-size:12px;
+    padding: 2px;
+    vertical-align: top;
+    font-family: 'Roboto';
+    font-weight: normal;
+  
+    /* font-family: "Times New Roman", Times, serif; */
+  }
+  
+  .noborder
+  {
+  border:1px solid white !important;
+  }
+  .bottomborder
+  {
+  border-bottom:1px solid black !important;
+  }
+  .table14px {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  .table14px > thead > tr > th,
+  .table14px > tbody > tr > th,
+  .table14px > tfoot > tr > th,
+  .table14px > thead > tr > td,
+  .table14px > tbody > tr > td,
+  .table14px > tfoot > tr > td {
+    font-size:14px;
+    padding: 1px;
+    vertical-align: top;
+    font-family: 'Roboto';
+    font-weight: normal;
+  
+  }
+  
+  
+  .table-bordered {
+    border: 1px solid #ddd;
+  }
+  .table-bordered > thead > tr > th,
+  .table-bordered > tbody > tr > th,
+  .table-bordered > tfoot > tr > th,
+  .table-bordered > thead > tr > td,
+  .table-bordered > tbody > tr > td,
+  .table-bordered > tfoot > tr > td {
+  
+    border: 1px solid #ddd;
+  }
+  .table-bordered > thead > tr > th,
+  .table-bordered > thead > tr > td {
+    border-bottom-width: 2px;
+  
+  }
+  
+  
+  
+  .table-bordered2px {
+    border: 1px solid black;
+  }
+  .table-bordered2px > thead > tr > th,
+  .table-bordered2px > tbody > tr > th,
+  .table-bordered2px > tfoot > tr > th,
+  .table-bordered2px > thead > tr > td,
+  .table-bordered2px > tbody > tr > td,
+  .table-bordered2px > tfoot > tr > td {
+  
+    border:1px solid black;
+  }
+  .table-bordered2px > thead > tr > th,
+  .table-bordered2px > thead > tr > td {
+    border-bottom-width: 1px;
+  
+  }
+  
+  
+  
+  
+  
+  .linepadding
+  {
+    padding:10px !important;
+  }
+  
+  .tfootunderline {
+    line-height: 1.42857143;
+    border-top: 1px solid #adadad;
+  }
+  .theadunderline {
+    vertical-align: bottom;
+    border-bottom: 2px solid #adadad;
+  }
+  .mainheading {
+    /* line-height: 0.5; */
+    font-size:14px !important;
+    font-weight: bold;
+    text-align: center;
+  }
+  .subheadingbold {
+    line-height: 0.5;
+    font-size:12px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .subheadingnormal {
+    /* line-height: 1; */
+    font-size:12px;
+  
+    text-align: center;
+  }
+  .reportheading {
+    line-height: 0.5;
+    font-size:16px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .reportdatehead {
+    line-height: 0.5;
+    font-size:14px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .theadbox {
+    border:1px solid black !important;
+  
+  }
+  
+  .endofreportbox
+  {
+    padding:4px;
+  border:1px solid black;
+  }
+  
+  
+  
+  .tfootbox {
+    border: 0.1px solid grey!important;
+    font-style: italic;
+    font-weight: bold;
+  }
+  
+  .label {
+    font-size: 75%;
+    font-family:Times New Roman;
+    font-weight: bold;
+    text-align: center;
+    color: #000;
+    display: inline;
+    padding: .2em .6em .3em;
+    line-height: 1;
+    white-space: nowrap;
+    border-radius: .25em;
+  }
+  
+  .text-left {
+    text-align: left;
+  }
+  .text-right {
+    text-align: right;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-justify {
+    text-align: justify;
+  }
+  .text-lowercase {
+    text-transform: lowercase;
+  }
+  .text-uppercase {
+    text-transform: uppercase;
+  }
+  .text-capitalize {
+    text-transform: capitalize;
+  }
+  
+  .center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .pull-right {
+    float: right !important;
+  }
+  .pull-left {
+    float: left !important;
+  }
+  .hide {
+    display: none !important;
+  }
+  .show {
+    display: block !important;
+  }
+  .invisible {
+    visibility: hidden;
+  }
+  
+  .page-header {
+    padding-bottom: 9px;
+    margin: 40px 0 20px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .text-nowrap {
+    white-space: nowrap;
+  }
+  
+  .text-muted {
+    color: #777;
+  }
+  .text-primary {
+    color: #337ab7;
+  }
+  
+  .text-success {
+    color: #3c763d;
+  }
+  
+  .text-info {
+    color: #31708f;
+  }
+  
+  .text-warning {
+    color: #8a6d3b;
+  }
+  
+  .text-danger {
+    color: #a94442;
+  }
+  
+  .htmlreportbg
+  {
+    background-color:#c5e2f9 !important;
+  }
+  
+  .bold
+  {
+    font-weight:bold;
+  }
+  
+  .pagenumbers
+  {
+       font-weight:bold;
+        font-size:12px;
+        color: black;
+        float: left;
+        padding: 4px 8px;
+        margin-right:8px;
+        text-decoration: none;
+        border:1px solid black;
+  }
+  .activepage
+  {
+    background-color:grey;
+    color:white;
+  }
+  
+  table, tr, td, th, tbody, thead, tfoot {
+       page-break-inside: avoid !important;
+  }
+  
+  .onlydigits
+  {
+    white-space: nowrap;
+  }
+  
+  
+  .table > tbody > tr > td > div,
+  .table > tr > th > div
+  {
+    font-size:10px;
+  }
+  .table12px > tbody > tr > td > div,
+  .table12px > tr > th > div
+  {
+    font-size:12px;
+  }
+  .table14px > tbody > tr > td > div,
+  .table14px > tr > th > div
+  {
+    font-size:14px;
+  }
+  
+  .borderbottom
+  {
+      border-bottom:1px solid black;
+  }
+  .bordertop
+  {
+      border-top:1px solid black;
+  }
+  .borderleft
+  {
+      border-left:1px solid black;
+  }
+  .borderright
+  {
+      border-right:1px solid black;
+  }
+  
+  .border1px th , .border1px  td
+  {
+      border: 1px solid black !important;
+  }
+  
+  .next-line
+  {
+    display:block;
+  }
+  
+  .font14 td,.font14 th
+  {
+          font-size:14px !important;
+  }
+  
+  
+  
+  
+  .w1-percent{width:1%;}.w2-percent{width:2%;}.w3-percent{width:3%;}.w4-percent{width:4%;}.w5-percent{width:5%;}.w6-percent{width:6%;}.w7-percent{width:7%;}.w8-percent{width:8%;}.w9-percent{width:9%;}.w10-percent{width:10%;}.w11-percent{width:11%;}.w12-percent{width:12%;}.w13-percent{width:13%;}.w14-percent{width:14%;}.w15-percent{width:15%;}.w16-percent{width:16%;}.w17-percent{width:17%;}.w18-percent{width:18%;}.w19-percent{width:19%;}.w20-percent{width:20%;}.w21-percent{width:21%;}.w22-percent{width:22%;}.w23-percent{width:23%;}.w24-percent{width:24%;}.w25-percent{width:25%;}.w26-percent{width:26%;}.w27-percent{width:27%;}.w28-percent{width:28%;}.w29-percent{width:29%;}.w30-percent{width:30%;}.w31-percent{width:31%;}.w32-percent{width:32%;}.w33-percent{width:33%;}.w34-percent{width:34%;}.w35-percent{width:35%;}.w36-percent{width:36%;}.w37-percent{width:37%;}.w38-percent{width:38%;}.w39-percent{width:39%;}.w40-percent{width:40%;}.w41-percent{width:41%;}.w42-percent{width:42%;}.w43-percent{width:43%;}.w44-percent{width:44%;}.w45-percent{width:45%;}.w46-percent{width:46%;}.w47-percent{width:47%;}.w48-percent{width:48%;}.w49-percent{width:49%;}.w50-percent{width:50%;}.w51-percent{width:51%;}.w52-percent{width:52%;}.w53-percent{width:53%;}.w54-percent{width:54%;}.w55-percent{width:55%;}.w56-percent{width:56%;}.w57-percent{width:57%;}.w58-percent{width:58%;}.w59-percent{width:59%;}.w60-percent{width:60%;}.w61-percent{width:61%;}.w62-percent{width:62%;}.w63-percent{width:63%;}.w64-percent{width:64%;}.w65-percent{width:65%;}.w66-percent{width:66%;}.w67-percent{width:67%;}.w68-percent{width:68%;}.w69-percent{width:69%;}.w70-percent{width:70%;}.w71-percent{width:71%;}.w72-percent{width:72%;}.w73-percent{width:73%;}.w74-percent{width:74%;}.w75-percent{width:75%;}.w76-percent{width:76%;}.w77-percent{width:77%;}.w78-percent{width:78%;}.w79-percent{width:79%;}.w80-percent{width:80%;}.w81-percent{width:81%;}.w82-percent{width:82%;}.w83-percent{width:83%;}.w84-percent{width:84%;}.w85-percent{width:85%;}.w86-percent{width:86%;}.w87-percent{width:87%;}.w88-percent{width:88%;}.w89-percent{width:89%;}.w90-percent{width:90%;}.w91-percent{width:91%;}.w92-percent{width:92%;}.w93-percent{width:93%;}.w94-percent{width:94%;}.w95-percent{width:95%;}.w96-percent{width:96%;}.w97-percent{width:97%;}.w98-percent{width:98%;}.w99-percent{width:99%;}.w100-percent{width:100%;}
+  
+  /* .tablecolumnsbasedonwidth
+  {
+          table-layout:fixed !important;
+  } */
+  
+  .hof
+  {
+           white-space: nowrap !important;
+          overflow: hidden !important;
+  }
+  
