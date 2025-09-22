@@ -18,6 +18,6 @@ class CreateDocumentTagsTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('document_tag');
+        Schema::dropIfExists('document_tags');
     }
 }

@@ -76,8 +76,8 @@ class AuthController extends Controller
     public function getAuthUser()
     {
         $authuser = User::where('id', Auth::id())->first();
-        $authuser->load(['organizations', 'personalInformation','unreadNotifications']);
-        $authuser->append('current_organization');
+        $authuser->load(['organization','unreadNotifications']);
+       
         return response()->json($authuser, 200);
     }
 

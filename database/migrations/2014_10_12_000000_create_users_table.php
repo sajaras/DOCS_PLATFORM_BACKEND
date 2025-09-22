@@ -25,6 +25,16 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+            // Add a CHECK constraint to enforce the business rule
+        DB::statement('
+            ALTER TABLE users
+            ADD CONSTRAINT check_user_role_organization
+            CHECK (
+                (is_platform_admin = TRUE AND organization_id IS NULL) OR
+                (is_platform_admin = FALSE AND organization_id IS NOT NULL)
+            )
+        ');
     }
 
     /**
