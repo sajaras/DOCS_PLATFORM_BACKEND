@@ -39,26 +39,25 @@ class UserController extends Controller
         // }
         // return $request;
         // Log::info('--- ROLE STORE METHOD WAS REACHED ---',$request->all());
-    //    dd("sss");
+        //    dd("sss");
         $this->service->setActivity('createRecord')->checkIfPermissionGranted();
         $this->service->validateRequest();
-        $user = DB::transaction(function() use ($request){
-          
-            $user =  $this->service->create($request,$this->is_ris_admin);
-            
-             $this->service->SyncRolesToUser($user,$request->role_ids);
-             $this->service->SyncPermissionsToUser($user,$request->permission_ids);
-             return $user;
+        $user = DB::transaction(function () use ($request) {
 
+            $user =  $this->service->create($request, $this->is_ris_admin);
+
+            $this->service->SyncRolesToUser($user, $request->role_ids);
+            $this->service->SyncPermissionsToUser($user, $request->permission_ids);
+            return $user;
         });
         return response()->json(['user' => $user->load(['roles'])], 201);
     }
 
-    public function show(User $user) 
+    public function show(User $user)
     {
-       
+
         $this->service->setActivity('viewRecord')->checkIfPermissionGranted();
-        $loadedUser = $this->service->getById($user->id,null);
+        $loadedUser = $this->service->getById($user->id, null);
         $loadedUser->append(['role_ids'])->makeHidden('roles');
         if (!$loadedUser) return response()->json(['message' => 'User not found.'], 404);
         return response()->json(['user' => $loadedUser]);
@@ -68,19 +67,16 @@ class UserController extends Controller
     {
         $this->service->setActivity('updateRecord')->checkIfPermissionGranted();
         $this->service->validateRequest($user);
-        $updatedUser = DB::transaction(function() use ($request,$user)
-        {
-             $this->service->update($request, $user);
-            
-             $this->service->SyncRolesToUser($user,$request->role_ids);
+        $updatedUser = DB::transaction(function () use ($request, $user) {
+            $this->service->update($request, $user);
 
-          
-             $this->service->SyncPermissionsToUser($user,$request->permission_ids);
-             return $user;
-            
+            $this->service->SyncRolesToUser($user, $request->role_ids);
 
+
+            $this->service->SyncPermissionsToUser($user, $request->permission_ids);
+            return $user;
         });
-        return response()->json(['user' => $updatedUser->load(['roles','permissions'])]);
+        return response()->json(['user' => $updatedUser->load(['roles', 'permissions'])]);
     }
 
     public function destroy(User $user)
@@ -97,7 +93,7 @@ class UserController extends Controller
         }
     }
 
-     public function deleteMultiple(Request $request)
+    public function deleteMultiple(Request $request)
     {
 
         $this->service->setActivity('deleteRecord')->checkIfPermissionGranted();
@@ -110,5 +106,18 @@ class UserController extends Controller
             Log::error("Error deleting district: " . $e->getMessage());
             return response()->json(['message' => "Could not delete address."], 500);
         }
+    }
+
+    // ADD THIS NEW METHOD
+    public function updateProfile(Request $request)
+    {
+        $user = Auth::user();
+        $this->service->validateProfileUpdateRequest($request, $user);
+
+        $updatedUser = DB::transaction(function () use ($request, $user) {
+            return $this->service->updateProfile($request, $user);
+        });
+
+        return response()->json(['user' => $updatedUser, 'message' => 'Profile updated successfully.']);
     }
 }

@@ -310,5 +310,39 @@ class UserService
             $user->save();
         }
     }
+
+      // ADD THESE NEW METHODS
+    public function validateProfileUpdateRequest(Request $request, User $user): void
+    {
+        $rules = [
+            'name' => 'required|string|max:255',
+            'profile_pic' => 'nullable|file|mimes:jpeg,jpg,png|max:2048',
+        ];
+
+        if ($request->filled('password')) {
+            $rules['password'] = 'required|string|confirmed|min:6';
+        }
+
+        $request->validate($rules);
+    }
+
+    public function updateProfile(Request $requestData, User $user)
+    {
+        $data = $requestData->only(['name']);
+
+        if ($requestData->hasFile('profile_pic')) {
+            // Delete old picture if it exists
+            $this->deleteProfilePicture($user);
+            $fileName = time() . '_' . $requestData->file('profile_pic')->getClientOriginalName();
+            $data['profile_pic_path'] = '/storage/' . ($requestData->file('profile_pic')->storeAs('profile_pictures', $fileName, 'public'));
+        }
+
+        if ($requestData->filled('password')) {
+            $data['password'] = Hash::make($requestData->password);
+        }
+
+        $user->update($data);
+        return $user;
+    }
         
 }
