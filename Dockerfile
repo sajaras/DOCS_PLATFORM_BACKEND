@@ -12,17 +12,21 @@ RUN apt-get update && apt-get install -y \
     libonig-dev \
     libxml2-dev \
     zip \
-    unzip
+    unzip \
+    libzip-dev # <-- Add dependency for the zip extension
 
 # Install PHP extensions required by Laravel
-RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
+# ---- MODIFIED THIS LINE ----
+RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
 
-# ---- NEW SECTION FOR OPCACHE ----
 # Install and enable OPcache
 RUN docker-php-ext-install opcache
 # Copy our custom opcache config file
 COPY docker-compose/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
-# --------------------------------
+
+# ---- NEW LINE TO FIX GIT ERROR ----
+# Set the git safe directory
+RUN git config --global --add safe.directory /var/www
 
 # Get latest Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
