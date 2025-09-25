@@ -13,11 +13,12 @@ RUN apt-get update && apt-get install -y \
     libxml2-dev \
     zip \
     unzip \
-    libzip-dev # <-- Add dependency for the zip extension
+    libzip-dev \
+    libpq-dev
 
 # Install PHP extensions required by Laravel
 # ---- MODIFIED THIS LINE ----
-RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
+RUN docker-php-ext-install pdo_mysql pdo_pgsql mbstring exif pcntl bcmath gd zip
 
 # Install and enable OPcache
 RUN docker-php-ext-install opcache
